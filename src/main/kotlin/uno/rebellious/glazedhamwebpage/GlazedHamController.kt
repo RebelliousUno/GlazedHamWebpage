@@ -20,7 +20,7 @@ class GlazedHamController (val configuration: BotConfiguration) {
         return "Hello from GlazedHamBot"
     }
 
-    @RequestMapping("/spotify", params = arrayOf("state"))
+    @RequestMapping("/spotify", params = ["state"])
     fun spotify(@RequestParam("state")stateAmount: String): RedirectView {
         val clientId = "client_id=${configuration.client_id}"
         val responseType = "response_type=code"
